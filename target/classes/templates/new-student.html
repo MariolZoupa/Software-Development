@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New Student</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+
+<br/>
+<br/>
+<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Add New Student </h1>
+				<div class = "card-body">
+					<form th:action="@{/courses/{id}/students/new (id=${c_id})}" th:object = "${student}" method="POST">
+						<div class ="form-group">
+							<label> First Name </label>
+							<input required
+							type = "text"
+							name = "firstName"
+							th:field = "*{firstName}"
+							class = "form-control"
+							placeholder="Enter First Name" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Last Name </label>
+							<input required
+							type = "text"
+							name = "lastName"
+							th:field = "*{lastName}"
+							class = "form-control"
+							placeholder="Enter Last Name" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> A.M. </label>
+							<input required
+							type = "number"
+							name = "am"
+							th:field = "*{am}"
+							class = "form-control"
+							placeholder="Enter A.M." 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> E-mail </label>
+							<input required
+							type = "email"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							placeholder="Enter E-mail" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Registration Year </label>
+							<input required
+							type = "number"
+							name = "registrationYear"
+							th:field = "*{registrationYear}"
+							class = "form-control"
+							placeholder="Enter Registration Year" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Semester </label>
+							<input required
+							type = "number"
+							name = "semester"
+							th:field = "*{semester}"
+							class = "form-control"
+							placeholder="Enter Semester" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Exam Grade </label>
+							<input
+							type = "number"
+							name = "examGrade"
+							th:field = "*{examGrade}"
+							class = "form-control"
+							placeholder="Enter Exam Grade" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Project Grade </label>
+							<input
+							type = "number"
+							name = "projectGrade"
+							th:field = "*{projectGrade}"
+							class = "form-control"
+							placeholder="Enter Project Grade" 
+							/>
+						</div>
+												
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+							<a th:href="@{/courses/{id}/students(id=${c_id})}">
+							   <input type="button" value="Cancel" class="btn btn-danger"/>
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+		
+</body>
+</html>
